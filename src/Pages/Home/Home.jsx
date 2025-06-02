@@ -148,7 +148,7 @@ function Home(props) {
                                 star={productDetails[6].star}
                             />
                         </div>
-                        <div className="hidden md:hidden lg:block">
+                        <div className="hidden md:hidden lg:hidden xl:block">
                             <ProductBox
                                 key={productDetails[7].title}
                                 title={productDetails[7].title}
@@ -205,7 +205,7 @@ function Home(props) {
                 </div>
                 {/*Blog Section*/}
                 <div className="flex justify-between items-center mt-8 md:mt-20">
-                    <h4 className="font-MorabaMedium text-2xl md:text-5xl text-zinc-700 dark:text-white ">مطالب خواندنی</h4>
+                    <h4 className="font-MorabaMedium text-2xl md:text-3xl lg:text-4xl xl:text-5xl text-zinc-700 dark:text-white ">مطالب خواندنی</h4>
                     <div className="flex justify-between items-center h-10 pr-3 pl-1 rounded-md text-orange-300 transition-colors md:hover:bg-orange-300/20 cursor-pointer">
                         <span className="hidden md:inline-block text-lg tracking-tightest">مشاهده همه محصولات</span>
                         <span className="md:hidden text-base tracking-tightest">مشاهده همه </span>
@@ -214,7 +214,7 @@ function Home(props) {
                         </svg>
                     </div>
                 </div>
-                <div className="flex md:flex-row flex-col justify-center items-center md:mt-12 mt-5 md:gap-x-5 gap-y-3.5">
+                <div className="flex md:flex-row flex-col justify-center items-center md:mt-12 mt-5 md:gap-x-5 gap-y-3.5 over">
                     <div className="flex flex-row group md:flex-col justify-center items-center md:p-0 p-2.5 w-[358px] h-[150px] md:w-[300px] md:h-[285px] bg-white dark:bg-zinc-700 rounded-2xl ">
                         <div className="relative w-[130px] h-[130px] md:w-[280px] md:h-[186px] rounded-t-2xl rounded-tl-2xl rounded-bl-4xl rounded-b-2xl md:rounded-2xl overflow-hidden">
                             <img className="w-full h-full object-cover object-center " src="/assets/images/blogs/blog-1.png" alt="blog1" />
@@ -291,7 +291,7 @@ function Home(props) {
                             </div>
                         </div>
                     </div>
-                    <div className="flex flex-row group md:flex-col justify-center items-center md:p-0 p-2.5 w-[358px] h-[150px] md:w-[300px] md:h-[285px] bg-white dark:bg-zinc-700 rounded-2xl ">
+                    <div className="flex flex-row group md:hidden lg:flex lg:flex-col justify-center items-center md:p-0 p-2.5 w-[358px] h-[150px] md:w-[300px] md:h-[285px] bg-white dark:bg-zinc-700 rounded-2xl ">
                         <div className="relative w-[130px] h-[130px] md:w-[280px] md:h-[186px] rounded-t-2xl rounded-tl-2xl rounded-bl-4xl rounded-b-2xl md:rounded-2xl overflow-hidden">
                             <img className="w-full h-full object-cover object-center " src="/assets/images/blogs/blog-3.png" alt="blog3" />
                             <div className="absolute inset-0 w-full h-full hidden md:flex items-center justify-center invisible opacity-0 group-hover:opacity-100 group-hover:visible bg-gradient-to-r from-orange-200/80 to-orange-300/80 transition-all">
@@ -329,7 +329,7 @@ function Home(props) {
                             </div>
                         </div>
                     </div>
-                    <div className="flex flex-row group md:flex-col justify-center items-center md:p-0 p-2.5 w-[358px] h-[150px] md:w-[300px] md:h-[285px] bg-white dark:bg-zinc-700 rounded-2xl ">
+                    <div className="flex flex-row group md:hidden lg:hidden xl:flex xl:flex-col justify-center items-center md:p-0 p-2.5 w-[358px] h-[150px] md:w-[300px] md:h-[285px] bg-white dark:bg-zinc-700 rounded-2xl ">
                         <div className="relative w-[130px] h-[130px] md:w-[280px] md:h-[186px] rounded-t-2xl rounded-tl-2xl rounded-bl-4xl rounded-b-2xl md:rounded-2xl overflow-hidden">
                             <img className="w-full h-full object-cover object-center " src="/assets/images/blogs/blog-4.png" alt="blog4" />
                             <div className="absolute inset-0 w-full h-full hidden md:flex items-center justify-center invisible opacity-0 group-hover:opacity-100 group-hover:visible bg-gradient-to-r from-orange-200/80 to-orange-300/80 transition-all">
