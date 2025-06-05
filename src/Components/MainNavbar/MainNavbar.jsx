@@ -251,7 +251,7 @@ function MainNavbar(props) {
                                 </svg>
                                 فروشگاه
                             </div>
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className={`size-5 transition-transform duration-300  ${ open ? "rotate-180 " : "rotate-0"}`}>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className={`size-5 transition-transform duration-300  ${ show ? "rotate-180 " :"rotate-0"}`}>
                                 <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
                             </svg>
 
@@ -266,37 +266,37 @@ function MainNavbar(props) {
                                 <a
                                     className={activeLink === "قهوه ویژه" ? "active" : ""}
                                     onClick={() => setActiveLink("قهوه ویژه")}
-                                    href="#" >قهوه ویژه</a>
+                                    href="/" >قهوه ویژه</a>
                             </li>
                             <li>
                                 <a
                                     className={activeLink === "ویژه در سطح جهانی" ? "active" : ""}
                                     onClick={() => setActiveLink("ویژه در سطح جهانی")}
-                                    href="#" >ویژه در سطح جهانی</a>
+                                    href="/" >ویژه در سطح جهانی</a>
                             </li>
                             <li>
                                 <a
                                     className={activeLink === "قهوه درجه یک" ? "active" : ""}
                                     onClick={() => setActiveLink("قهوه درجه یک")}
-                                    href="#" >قهوه درجه یک</a>
+                                    href="/" >قهوه درجه یک</a>
                             </li>
                             <li>
                                 <a
                                     className={activeLink === "ترکیبات تجاری" ? "active" : ""}
                                     onClick={() => setActiveLink("ترکیبات تجاری")}
-                                    href="#" >ترکیبات تجاری</a>
+                                    href="/" >ترکیبات تجاری</a>
                             </li>
                             <li>
                                 <a
                                     className={activeLink === "کپسول قهوه" ? "active" : ""}
                                     onClick={() => setActiveLink("کپسول قهوه")}
-                                    href="#" >کپسول قهوه</a>
+                                    href="/" >کپسول قهوه</a>
                             </li>
                             <li>
                                 <a
                                     className={activeLink === "قهوه زینو برزیلی" ? "active" : ""}
                                     onClick={() => setActiveLink("قهوه زینو برزیلی")}
-                                    href="#" >قهوه زینو برزیلی</a>
+                                    href="/" >قهوه زینو برزیلی</a>
                             </li>
                         </ul>
                     </li>
@@ -341,7 +341,7 @@ function MainNavbar(props) {
                 {/*Footer Menu*/}
                 <div className="text-orange-300 space-y-6 px-2.5 py-8 mt-8 border-t border-t-gray-100 dark:border-t-white/10">
                     {/*Login Footer*/}
-                    <a className="inline-flex items-center gap-x-2" href="#">
+                    <a className="inline-flex items-center gap-x-2" href="/">
                         <BsBoxArrowInRight className="w-5 h-5" />
                         ورود | ثبت نام
                     </a>
