@@ -45,7 +45,7 @@ function MainNavbar(props) {
 
     useEffect(() => {
         const handleClickOutside = (event) => {
-            if (menuRef.current && !menuRef.current.contains(event.target)) {
+            if (!menuRef.current.contains(event.target)) {
                 setOpen(false);
                 setCart(false);
             }
@@ -190,7 +190,9 @@ function MainNavbar(props) {
             </div>
         </header>
         {/*Mobile Header*/}
-        <div className="flex md:hidden items-center justify-between px-4 h-16 bg-white dark:bg-zinc-700  ">
+        <div
+            ref={menuRef}
+            className="flex md:hidden items-center justify-between px-4 h-16 bg-white dark:bg-zinc-700  ">
             {/*Nav Icon*/}
             <div
                 className="text-zinc-700 dark:text-white cursor-pointer"
@@ -202,9 +204,7 @@ function MainNavbar(props) {
             </div>
 
             {/*Menu*/}
-            <div
-                ref={menuRef}
-                className={`
+            <div className={`
             ${open ? "" : "hidden"} 
             fixed pt-3 px-4 top-0 bottom-0 right-0 z-20 w-64 min-h-screen overflow-y-auto overflow-x-hidden dark:bg-zinc-700 bg-white
             `}>
