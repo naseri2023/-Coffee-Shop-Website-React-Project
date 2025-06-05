@@ -1,4 +1,4 @@
-import React, {useContext, useState} from 'react';
+import React, {useContext, useEffect, useRef, useState} from 'react';
 import { MdOutlineShoppingCart } from "react-icons/md";
 import { BsBoxArrowInRight } from "react-icons/bs";
 import AppContext from "../../AppContext";
@@ -41,6 +41,22 @@ function MainNavbar(props) {
         setShow((prev) => !prev);
     }
 
+    const menuRef = useRef(null);
+
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (menuRef.current && !menuRef.current.contains(event.target)) {
+                setOpen(false);
+                setCart(false);
+            }
+        };
+
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, []);
+
     return (<>
         <header className="font-DanaLight fixed top-9 right-0 left-0 z-50 hidden md:flex items-center bg-black/50
         w-[98%] lg:w-[90%] pr-10 px-10 h-24 mx-auto rounded-3xl backdrop-blur-[6px]">
@@ -59,22 +75,22 @@ function MainNavbar(props) {
                         {/*sub menu*/}
                         <ul className="absolute top-full opacity-0 invisible group-hover:opacity-100 group-hover:visible w-52 p-6 text-zinc-700 dark:text-white bg-white dark:bg-zinc-700 rounded-2xl border-t-[3px] border-t-orange-300 text-base space-y-4 tracking-normal shadow-normal child:transition-colors  transition-all delay-75 child-hover:text-orange-300 ">
                             <li>
-                                <a href="#" >قهوه ویژه</a>
+                                <a href="/" >قهوه ویژه</a>
                             </li>
                             <li>
-                                <a href="#" >ویژه در سطح جهانی</a>
+                                <a href="/" >ویژه در سطح جهانی</a>
                             </li>
                             <li>
-                                <a href="#" >قهوه درجه یک</a>
+                                <a href="/" >قهوه درجه یک</a>
                             </li>
                             <li>
-                                <a href="#" >ترکیبات تجاری</a>
+                                <a href="/" >ترکیبات تجاری</a>
                             </li>
                             <li>
-                                <a href="#" >کپسول قهوه</a>
+                                <a href="/" >کپسول قهوه</a>
                             </li>
                             <li>
-                                <a href="#" >قهوه زینو برزیلی</a>
+                                <a href="/" >قهوه زینو برزیلی</a>
                             </li>
                         </ul>
                     </li>
@@ -104,7 +120,7 @@ function MainNavbar(props) {
                                 {/*Cart Header*/}
                                 <div className="flex items-center justify-between tracking-tighter font-DanaLight text-sm">
                                     <span className="text-gray-300 ">1 مورد</span>
-                                    <a className="flex items-center text-orange-300" href="#">
+                                    <a className="flex items-center text-orange-300" href="/">
                                         مشاهده سبد خرید
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-4">
                                             <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
@@ -153,7 +169,7 @@ function MainNavbar(props) {
                                         </div>
                                     </div>
                                     <div >
-                                        <a href="#" className="px-6 py-3 font-DanaLight text-xl text-white tracking-tightest bg-teal-600 hover:bg-teal-700 dark:bg-emerald-500 dark:hover:bg-emerald-600 rounded-xl">ثبت سفارش</a>
+                                        <a href="/" className="px-6 py-3 font-DanaLight text-xl text-white tracking-tightest bg-teal-600 hover:bg-teal-700 dark:bg-emerald-500 dark:hover:bg-emerald-600 rounded-xl">ثبت سفارش</a>
                                     </div>
                                 </div>
                             </div>
@@ -166,7 +182,7 @@ function MainNavbar(props) {
                     {/*Divide Border*/}
                     <span className="w-px h-14 bg-white/20"></span>
                     {/*Login Link*/}
-                    <a href="#" className="flex tracking-tightest items-center gap-x-2.5">
+                    <a href="/" className="flex tracking-tightest items-center gap-x-2.5">
                         <BsBoxArrowInRight className="w-6 h-6" />
                         <span className="hidden xl:inline-block">ورود | ثبت نام</span>
                     </a>
@@ -186,7 +202,9 @@ function MainNavbar(props) {
             </div>
 
             {/*Menu*/}
-            <div className={`
+            <div
+                ref={menuRef}
+                className={`
             ${open ? "" : "hidden"} 
             fixed pt-3 px-4 top-0 bottom-0 right-0 z-20 w-64 min-h-screen overflow-y-auto overflow-x-hidden dark:bg-zinc-700 bg-white
             `}>
@@ -355,7 +373,7 @@ function MainNavbar(props) {
                         </div>
                     </span>
                     {/*Cart Footer*/}
-                    <a className="inline-flex items-center gap-x-2" href="#">
+                    <a className="inline-flex items-center gap-x-2" href="/">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-5">
                             <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
                         </svg>
@@ -392,7 +410,9 @@ function MainNavbar(props) {
                 </svg>
             </div>
                 {/*Cart Side*/}
-                <div className={`
+                <div
+                    ref={menuRef}
+                    className={`
                 ${cart ? "" : "hidden"}
                 fixed pt-5 px-3 top-0 bottom-0 left-0 z-20 w-64 min-h-screen overflow-y-auto overflow-x-hidden dark:bg-zinc-700 bg-white
                 `}>
@@ -444,7 +464,7 @@ function MainNavbar(props) {
                         {/*Footer Menu*/}
                         <div className="fixed bottom-0 flex justify-between items-center pb-8 gap-x-4">
                             <div >
-                                <a href="#" className="flex items-center justify-center w-28 h-11 font-DanaLight text-sm text-white bg-teal-600 dark:bg-emerald-500 rounded-xl">ثبت سفارش</a>
+                                <a href="/" className="flex items-center justify-center w-28 h-11 font-DanaLight text-sm text-white bg-teal-600 dark:bg-emerald-500 rounded-xl">ثبت سفارش</a>
                             </div>
                             <div className="flex flex-col justify-between ">
                                 <span className="text-gray-300 font-DanaLight text-xs pb-1">مبلغ قابل پرداخت</span>
