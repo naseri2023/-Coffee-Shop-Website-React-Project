@@ -195,7 +195,7 @@ function Footer(props) {
                         <div>
                             <div className="flex items-center justify-center w-[30px] h-[30px] border border-white/20 rounded-full">
                                 <div className="flex items-center justify-center w-5 h-5 border border-white/20 rounded-full">
-                                    <div className="flex items-center justify-center w-2.5 h-2.5 border bg-gradient-to-t from-orange-300 to-orange-200 rounded-full"></div>
+                                    <div className="flex items-center justify-center w-2.5 h-2.5 border border-orange-300 bg-gradient-to-t from-orange-300 to-orange-200 rounded-full"></div>
                                 </div>
                             </div>
                         </div>
