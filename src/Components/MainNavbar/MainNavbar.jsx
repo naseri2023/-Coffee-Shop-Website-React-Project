@@ -48,6 +48,7 @@ function MainNavbar(props) {
             if (!menuRef.current.contains(event.target)) {
                 setOpen(false);
                 setCart(false);
+                setShow(false);
             }
         };
 
